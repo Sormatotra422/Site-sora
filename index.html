@@ -12,89 +12,90 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon site</title>
   <style>
     body {
+      font-family: sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    /* Menu */
-    .menu-btn {
-      position: absolute;
-      left: 15px;
-      top: 15px;
-      font-size: 24px;
-      background: none;
-      border: none;
-      cursor: pointer;
+      padding: 0;
     }
 
-    .sidebar {
-      height: 100%;
-      width: 250px;
-      position: fixed;
-      top: 0;
-      left: -250px;
-      background-color: #111;
+    .navbar {
+      background-color: #333;
+      padding: 10px;
       color: white;
-      padding-top: 60px;
-      transition: 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .sidebar a {
-      padding: 15px 20px;
-      display: block;
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #444;
+    }
+
+    .menu a {
+      color: white;
+      padding: 10px;
       text-decoration: none;
-      color: white;
-      transition: 0.3s;
+      border-top: 1px solid #555;
     }
 
-    .sidebar a:hover {
-      background-color: #575757;
+    .menu a:hover {
+      background-color: #555;
     }
 
-    .main {
-      margin-left: 0;
-      padding: 20px;
-      transition: margin-left 0.3s;
+    .hamburger {
+      cursor: pointer;
+      font-size: 24px;
     }
 
-    .sidebar.open {
-      left: 0;
-    }
+    @media (min-width: 600px) {
+      .menu {
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+      }
 
-    .main.shift {
-      margin-left: 250px;
+      .menu a {
+        border: none;
+      }
+
+      .hamburger {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Bouton menu burger -->
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-  <!-- Menu latéral -->
-  <div id="sidebar" class="sidebar">
-    <a href="#">Accueil</a>
-    <a href="#">Mon profil</a>
-    <a href="#">Changer de profil</a>
-    <a href="#">Faire un retrait</a>
-    <a href="#">Consulter le solde</a>
-    <a href="#">Déconnexion</a>
+  <div class="navbar">
+    <div>Mon Site</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 
-  <!-- Contenu principal -->
-  <div id="main" class="main">
+  <div class="menu" id="menu">
+    <a href="#">Accueil</a>
+    <a href="#">À propos</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div style="padding: 20px;">
     <h1>Bienvenue sur mon site</h1>
     <p>Voici un menu comme celui de Tronpick, adapté aux téléphones.</p>
   </div>
 
   <script>
     function toggleMenu() {
-      document.getElementById('sidebar').classList.toggle('open');
-      document.getElementById('main').classList.toggle('shift');
+      const menu = document.getElementById('menu');
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+      }
     }
   </script>
 
