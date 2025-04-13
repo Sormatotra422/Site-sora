@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #575757;
+}
+
+/* Sous-menu */
+nav ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  display: none;
+}
+
+nav ul li ul li a {
+  padding: 10px 20px;
+  color: white;
+}
+
+/* Classe pour afficher/cacher le menu */
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
