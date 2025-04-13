@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ju<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -7,5 +7,116 @@
 <body>
   <h1>Bonjour depuis GitHub Pages !</h1>
   <p>Si tu vois ce message, ton site fonctionne.</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Site Publicitaire</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+    }
+
+    .menu a {
+      color: white;
+      padding: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+    }
+
+    .menu a:hover {
+      background-color: #444;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media(min-width: 768px) {
+      .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        background-color: transparent;
+        border: none;
+      }
+
+      .menu a {
+        border: none;
+      }
+
+      .hamburger {
+        display: none;
+      }
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .ads {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f1f1f1;
+      text-align: center;
+      border: 1px dashed #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Mon Site</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="#">Accueil</a>
+      <a href="#">Articles</a>
+      <a href="#">Compte</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Bienvenue sur mon site</h1>
+    <p>Un site conçu pour partager du contenu et afficher des publicités.</p>
+
+    <div class="ads">
+      [ ESPACE PUBLICITAIRE ICI ]<br>
+      (ex: bannière, AdSense, sponsor, etc.)
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
+
 </body>
 </html>
