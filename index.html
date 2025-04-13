@@ -9,3 +9,94 @@
   <p>Si tu vois ce message, ton site fonctionne.</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon site</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    /* Menu */
+    .menu-btn {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      background-color: #111;
+      color: white;
+      padding-top: 60px;
+      transition: 0.3s;
+    }
+
+    .sidebar a {
+      padding: 15px 20px;
+      display: block;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .main {
+      margin-left: 0;
+      padding: 20px;
+      transition: margin-left 0.3s;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .main.shift {
+      margin-left: 250px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bouton menu burger -->
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <!-- Menu latéral -->
+  <div id="sidebar" class="sidebar">
+    <a href="#">Accueil</a>
+    <a href="#">Mon profil</a>
+    <a href="#">Changer de profil</a>
+    <a href="#">Faire un retrait</a>
+    <a href="#">Consulter le solde</a>
+    <a href="#">Déconnexion</a>
+  </div>
+
+  <!-- Contenu principal -->
+  <div id="main" class="main">
+    <h1>Bienvenue sur mon site</h1>
+    <p>Voici un menu comme celui de Tronpick, adapté aux téléphones.</p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('main').classList.toggle('shift');
+    }
+  </script>
+
+</body>
+</html>
