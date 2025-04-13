@@ -1,9 +1,0 @@
-<script>
-  const toggleBtn = document.getElementById("toggle-compte");
-  const sousMenu = document.getElementById("sous-menu-compte");
-
-  toggleBtn.addEventListener("click", function(e) {
-    e.preventDefault(); // Empêche le lien de recharger la page
-    sousMenu.classList.toggle("hidden"); // Affiche ou cache le menu
-  });
-</script>
