@@ -1,0 +1,7 @@
+/mon-site-publicitaire/
+├── index.html         (page d’accueil)
+├── connexion.html     (connexion utilisateur)
+├── inscription.html   (création de compte)
+├── style.css          (design de ton site)
+├── app.js             (logique JS générale)
+├── firebase-config.js (ta configuration Firebase)
