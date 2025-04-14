@@ -1,148 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>SORA</title>
-</head>
-<body>
-  <h1>Bonjour !</h1>
-  <p>BIENVENU.</p>
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Publicitaire</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #222;
-      padding: 10px 20px;
-      color: white;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .menu {
-      display: none;
-      flex-direction: column;
-      background-color: #333;
-    }
-
-    .menu a {
-      color: white;
-      padding: 12px;
-      text-decoration: none;
-      border-bottom: 1px solid #444;
-    }
-
-    .menu a:hover {
-      background-color: #444;
-    }
-
-    .hamburger {
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    @media(min-width: 768px) {
-      .menu {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        background-color: transparent;
-        border: none;
-      }
-
-      .menu a {
-        border: none;
-      }
-
-      .hamburger {
-        display: none;
-      }
-    }
-
-    .content {
-      padding: 20px;
-    }
-
-    .ads {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #f1f1f1;
-      text-align: center;
-      border: 1px dashed #999;
-    }
-  </style>
+  <title>Accueil - PubWeb</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>PubWeb</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="connexion.html">Connexion</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="navbar">
-    <div class="logo">joué maintenant</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div class="menu" id="menu">
-      <a href="#">Accueil</a>
-      <a href="#">Articles</a>
-      <a href="#">Compte</a>
-      <a href="#">Contact</a>
+  <main>
+    <h2>Publicités en ligne</h2>
+    <div class="ads-container">
+      <div class="ad">Espace Publicitaire 1</div>
+      <div class="ad">Espace Publicitaire 2</div>
+      <div class="ad">Espace Publicitaire 3</div>
     </div>
-  </div>
+  </main>
 
-  <div class="content">
-    <h1>Bienvenue sur mon site</h1>
-    <p>Un site conçu pour partager du contenu et afficher des publicités.</p>
-
-    <div class="ads">
-      [ ESPACE PUBLICITAIRE ICI ]<br>
-      (ex: bannière, AdSense, sponsor, etc.)
-    </div>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-    }
-  </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Mon Menu Compte</title>
-  <link rel="stylesheet" href="style.css"> <!-- Lien vers le CSS -->
-</head>
-<body>
-
-  <nav>
-    <ul id="main-menu">
-      <li><a href="#">Accueil</a></li>
-      <li id="menu-compte">
-        <a href="#" id="toggle-compte">Compte</a>
-        <ul id="sous-menu-compte" class="hidden">
-          <li><a href="connexion.html">Se connecter</a></li>
-          <li><a href="#">S’inscrire</a></li>
-          <li><a href="#">Mot de passe oublié</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-
-  <script src="script.js"></script> <!-- Lien vers le JS -->
+  <footer>
+    <p>&copy; 2025 PubWeb. Tous droits réservés.</p>
+  </footer>
 </body>
 </html>
