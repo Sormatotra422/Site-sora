@@ -2,71 +2,34 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Connexion</title>
+  <title>Connexion - PubWeb</title>
   <link rel="stylesheet" href="style.css">
+  <script src="firebase-config.js" defer></script>
 </head>
 <body>
-
-  <h1>Connexion</h1>
-
-  <form id="form-connexion">
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="password" required>
-
+  <h2>Connexion</h2>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Email" required><br><br>
+    <input type="password" id="password" placeholder="Mot de passe" required><br><br>
     <button type="submit">Se connecter</button>
   </form>
+  <p id="message"></p>
 
   <script>
-    document.getElementById("form-connexion").addEventListener("submit", function(event) {
-      event.preventDefault();
-      
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-      // Simulation simple
-      if (email === "test@mail.com" && password === "1234") {
-        alert("Connexion réussie !");
-        // Redirection simulée
-        window.location.href = "index.html";
-      } else {
-        alert("Email ou mot de passe incorrect.");
-      }
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+          document.getElementById("message").textContent = "Connexion réussie !";
+          window.location.href = "index.html";
+        })
+        .catch((error) => {
+          document.getElementById("message").textContent = "Erreur : " + error.message;
+        });
     });
   </script>
-
 </body>
 </html>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAOVtBpa-Mp4DLFh2PL7BvRh6P2vdRtSjo",
-    authDomain: "sorapro-881a4.firebaseapp.com",
-    projectId: "sorapro-881a4",
-    storageBucket: "sorapro-881a4.firebasestorage.app",
-    messagingSenderId: "783292091730",
-    appId: "1:783292091730:web:eef6b8cd9689381e697e8b",
-    measurementId: "G-RRV6H6GH69"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-<h2>Connexion</h2>
-<form id="loginForm">
-  <input type="email" id="email" placeholder="Email" required><br><br>
-  <input type="password" id="password" placeholder="Mot de passe" required><br><br>
-  <button type="submit">Se connecter</button>
-</form>
-
-<p id="message"></p>
