@@ -1,85 +1,50 @@
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: sans-serif;
+  padding: 0;
+  background-color: #f5f5f5;
 }
 
-nav {
+header {
   background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
 }
 
 nav ul {
   list-style: none;
-  display: flex;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #444;
 }
 
 nav ul li {
-  position: relative;
+  margin: 0 15px;
 }
 
 nav ul li a {
-  display: block;
-  padding: 15px 20px;
   color: white;
   text-decoration: none;
 }
 
-nav ul li a:hover {
-  background-color: #575757;
+main {
+  padding: 20px;
 }
 
-/* Sous-menu */
-nav ul li ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #444;
-  display: none;
-}
-
-nav ul li ul li a {
-  padding: 10px 20px;
-  color: white;
-}
-
-/* Classe pour afficher/cacher le menu */
-.hidden {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-form {
-  max-width: 400px;
-  margin: 50px auto;
+.ads-container {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-input, button {
-  padding: 10px;
-  font-size: 16px;
+.ad {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
 }
-<script>
-  const auth = firebase.auth();
-
-  document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    auth.signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        document.getElementById("message").innerText = "Connexion réussie !";
-        console.log("Utilisateur connecté :", userCredential.user);
-        // Redirection possible ici, ex : window.location.href = "accueil.html";
-      })
-      .catch((error) => {
-        document.getElementById("message").innerText = "Erreur : " + error.message;
-      });
-  });
-</script>
