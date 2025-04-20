@@ -1,0 +1,7 @@
+<div class="pub-container">
+  <button class="pub-button" onclick="afficherPub()">Espace Publicitaire</button>
+  <div id="pub-content" class="pub-content">
+    <!-- Afaka soloina vidéo, sary, na texte pub -->
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/crvJQCmY9tQ" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
